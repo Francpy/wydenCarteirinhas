@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carteirinhas Wyden</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #6a0dad;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #6a0dad;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #6a0dad;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #5800a8;
+    }
+    .card-preview {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Venda de Carteirinhas - Wyden</h1>
+</header>
+
+<div class="container">
+  <h2>Solicitar Carteirinha</h2>
+  <form id="formCarteirinha">
+    <label>Nome completo</label>
+    <input type="text" id="nome" required>
+
+    <label>Matrícula</label>
+    <input type="text" id="matricula" required>
+
+    <label>Curso</label>
+    <input type="text" id="curso" required>
+
+    <label>Tipo de Carteirinha</label>
+    <select id="tipo">
+      <option value="Digital">Digital - R$10</option>
+      <option value="Física">Física - R$25</option>
+    </select>
+
+    <button type="submit">Comprar</button>
+  </form>
+
+  <div class="card-preview" id="preview" style="display:none;">
+    <h3>Prévia da Carteirinha</h3>
+    <p id="previewNome"></p>
+    <p id="previewMatricula"></p>
+    <p id="previewCurso"></p>
+    <p id="previewTipo"></p>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('formCarteirinha');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const matricula = document.getElementById('matricula').value;
+    const curso = document.getElementById('curso').value;
+    const tipo = document.getElementById('tipo').value;
+
+    document.getElementById('previewNome').innerText = "Nome: " + nome;
+    document.getElementById('previewMatricula').innerText = "Matrícula: " + matricula;
+    document.getElementById('previewCurso').innerText = "Curso: " + curso;
+    document.getElementById('previewTipo').innerText = "Tipo: " + tipo;
+
+    document.getElementById('preview').style.display = 'block';
+
+    alert('Pedido realizado com sucesso!');
+  });
+</script>
+
+</body>
+</html>
+<h3>Engenharia de Qualidade: Gabriel e Cássio</h3>
+<h3>Engenharia de Requisitos: Guilherme Afonso, Francisco e Thales</h3>
+<h3>Engenharia de Software: Guilherme e João Henrique</h3>
+<h3>Gerente de Projetos: Bruno,Daphyne e Guilherme Lopes</h3>
+<h4>Desenvolvedores: Francisco José</h4>
+<style>
+  h4 {
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    color: #6a0dad;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    }
+    h3 {
+      font-family: Open Sans, sans-serif;
+      color: #6a0dad;
+      text-align: left;
+    }
